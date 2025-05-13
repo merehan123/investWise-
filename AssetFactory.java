@@ -1,17 +1,8 @@
 /**
  * Factory class for creating {@link Asset} objects.
- * <p>
  * This class encapsulates the creation logic of Asset objects and helps decouple
  * the instantiation process from client code. It is especially useful when applying
  * the Factory Design Pattern.
- * </p>
- *
- * <p>
- * Example usage:
- * <pre>{@code
- *     Asset asset = AssetFactory.createAsset("user1", "Stocks", "Apple", 10, "2024-01-01", 150.0);
- * }</pre>
- * </p>
  *
  * @author Merehan
  */

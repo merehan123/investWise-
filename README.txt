@@ -1,26 +1,31 @@
-# Invest Wise
+# Invest Wise 💰
 
-## Overview
-
-**Invest Wise** is a financial management application that helps users manage investments in a structured way while supporting Islamic finance concepts such as zakat calculation.
-
-The system allows users to:
-
-* Register and log in securely
-* Manage financial assets
-* Calculate zakat
-* Simulate bank account connection
-* Track user investment data
+**Course:** Software Engineering
+**Project:** Investment Management System
 
 ---
 
-# User Interaction Flow
+# 📌 Project Overview
+
+**Invest Wise** is a financial management application designed to help users manage their investments while supporting Islamic financial principles.
+
+The system allows users to:
+
+* User Registration & Login
+* Asset Management
+* Zakat Calculation
+* Bank Account Simulation
+* Financial Tracking
+
+---
+
+# 🔐 User Interaction Flow
 
 ## 1. Program Start
 
-When the application starts, the main entry menu appears:
+When the application starts, the user sees:
 
-```text
+```text id="0xjiv2"
 1. Sign Up
 2. Login
 Choose an option:
@@ -30,47 +35,45 @@ Choose an option:
 
 ## 2. Sign Up Process
 
-If the user selects **Option 1 – Sign Up**, the system requests:
+The system asks for:
 
-```text
+```text id="6fjlwm"
 UserID:
 Enter name:
 Enter email:
 Enter password:
 ```
 
-### Possible Outcomes
+### Outcome
 
 **Successful registration**
 
-```text
+```text id="c6p9ik"
 Registration successful! Redirecting to choose your profile page...
 ```
 
 **Failed registration**
 
-```text
+```text id="9v2x4r"
 Registration failed due to system error. Please try again.
 ```
 
-After successful registration, the user is redirected to the **Main Menu**.
+After registration, the user enters the Main Menu.
 
 ---
 
 ## 3. Login Process
 
-If the user selects **Option 2 – Login**, credentials are required:
-
-```text
+```text id="ndnwhu"
 Enter username:
 Enter password:
 ```
 
-### Possible Outcomes
+### Outcome
 
 **Successful login**
 
-```text
+```text id="0psnlu"
 Session created for user: [username]
 Redirecting to Dashboard...
 Welcome to your Dashboard!
@@ -78,15 +81,15 @@ Welcome to your Dashboard!
 
 **Failed login**
 
-```text
+```text id="1o8sl2"
 Login failed. Returning to main menu...
 ```
 
 ---
 
-# Main Menu
+# 📋 Main Menu
 
-```text
+```text id="uxj7x4"
 1. Display Asset Options
 2. Zakat Calc
 3. Connect & Manage Bank Account
@@ -96,125 +99,72 @@ Choose an option:
 
 ---
 
-# Main Features
+# 💼 Asset Management
 
-## Option 1: Asset Management
-
-```text
-Enter your username:
-```
-
-Then:
-
-```text
+```text id="j6l75u"
 --- Asset Controller Menu ---
 1- Add asset
 2- Edit asset
 3- View assets
 4- Delete asset
 5- Exit
-Choice:
 ```
 
-### Asset Operations
+### Features
 
-* **Add Asset:** Enter asset type, name, quantity, purchase date, and price
-* **Edit Asset:** Modify existing asset details
-* **View Assets:** Display all assets
-* **Delete Asset:** Remove selected asset
-* **Exit:** Return to Main Menu
+* **Add Asset** → Enter type, name, quantity, date, and price
+* **Edit Asset** → Update asset details
+* **View Assets** → Display saved assets
+* **Delete Asset** → Remove selected asset
 
 ---
 
-## Option 2: Zakat Calculation
+# 🕌 Zakat Calculation
 
-Calculates zakat based on stored assets and displays a formatted zakat report.
+This feature calculates zakat based on stored assets and displays a zakat report.
 
 ---
 
-## Option 3: Connect & Manage Bank Account
+# 🏦 Bank Account Connection
 
-```text
-Enter your username to connect bank account:
-```
+Simulation steps:
 
-### Bank Simulation Flow
-
-* Select a bank
+* Select bank
 * Enter card details
-* Enter OTP (**1234**)
+* Enter OTP (`1234`)
 * Receive confirmation message
 
 ---
 
-## Option 4: Exit
-
-```text
-Exiting the program...
-```
-
----
-
-# Invalid Input Handling
-
-If the user enters an invalid choice:
-
-```text
-Invalid choice, please try again.
-```
-
-The system returns to the menu.
-
----
-
-# Looping Behavior
-
-The application continues running until the user explicitly chooses **Exit**.
-
----
-
-# Class Overview
+# 🧠 Class Overview
 
 ## AuthController
 
-Handles authentication and user registration using `users.txt`.
+Handles authentication and registration.
 
 ### Methods
 
-* `userExists(String username)`
-* `validateAndRegister(String id, String name, String email, String password)`
-* `authenticate(String username, String password)`
+* `userExists()`
+* `validateAndRegister()`
+* `authenticate()`
 
 ---
 
 ## User
 
-Represents application users and manages sign-up/login.
+Handles signup and login interactions.
 
 ### Methods
 
 * `Signup()`
 * `clickLogin()`
-* `submitLogin(String username, String password)`
-* `isValidEmail(String email)`
-* `isValidPassword(String password)`
-* `isValidName(String name)`
-
----
-
-## Main
-
-Entry point of the application.
-
-### Method
-
-* `main(String[] args)`
+* `submitLogin()`
 
 ---
 
 ## Asset
 
-Represents a financial asset.
+Represents financial assets.
 
 ### Attributes
 
@@ -224,19 +174,14 @@ Represents a financial asset.
 * Purchase Date
 * Purchase Price
 
-### Method
-
-* `calculateValue()`
-
 ---
 
 ## AssetController
 
-Handles asset operations.
+Manages assets.
 
 ### Methods
 
-* `displayAssetOptions()`
 * `addAsset()`
 * `editAsset()`
 * `viewAssets()`
@@ -246,34 +191,19 @@ Handles asset operations.
 
 ## AssetFactory
 
-Creates Asset objects centrally.
-
-### Method
-
-* `createAsset(String type, String name, int quantity, String date, double price)`
+Creates asset objects.
 
 ---
 
 ## BankAccount
 
-Simulates bank account connection and implements Observer pattern subject.
-
-### Methods
-
-* `clickConnectBankAccount()`
-* `attach(BankObserver)`
-* `detach(BankObserver)`
-* `notifyObservers(String event)`
+Simulates bank connection using Observer Pattern.
 
 ---
 
 ## BankObserver
 
-Observer interface for bank events.
-
-### Method
-
-* `update(String event)`
+Observer interface.
 
 ---
 
@@ -281,25 +211,21 @@ Observer interface for bank events.
 
 Logs bank events.
 
-### Method
-
-* `update(String event)`
-
 ---
 
 ## NotificationService
 
-Simulates notifications for bank events.
-
-### Method
-
-* `update(String event)`
+Sends simulated notifications.
 
 ---
 
-# Design Patterns Used
+# 🎯 Design Patterns Used
 
 * Factory Pattern
 * Observer Pattern
 
 ---
+
+# 🔁 Program Behavior
+
+The program continues running until the user selects **Exit**.
